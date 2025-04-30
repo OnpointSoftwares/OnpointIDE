@@ -1,0 +1,311 @@
+/* --- VS Code-like theme tweaks --- */
+body, .bg-dark {
+  background: #1e1e2f !important;
+  color: #e6e6e6 !important;
+}
+
+.tab-bar, .tab {
+  border-right: 1px solid #23233a;
+  transition: background 0.16s;
+  padding: 0 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #aaa;
+  background: #23233a;
+}
+.tab.active {
+  background: #23272e;
+  color: #fff;
+  border-top: 2px solid #7fd;
+}
+.tab .close-btn {
+  margin-left: 8px;
+  color: #f77;
+  cursor: pointer;
+  font-size: 13px;
+}
+.tab:hover {
+  background: #23233a;
+  color: #fff;
+}
+.CodeEditor {
+  background: #1e1e2f !important;
+  border-radius: 0;
+  border: none;
+}
+.panel-shadow {
+  box-shadow: 0 1px 4px #0002;
+}
+.SuggestionsPanel {
+  background: #23233a !important;
+  border-top: 1.5px solid #353b45;
+}
+.ChatbotPanel {
+  background: #23233a !important;
+  border-left: 1.5px solid #23233a;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23233a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e3e;
+  border-radius: 6px;
+}
+/* --- END VS Code-like theme tweaks --- */
+
+body, .bg-dark, .navbar, .modal-content, .form-control, .dropdown-menu, .card, .list-group-item, .nav-tabs, .tab-content, .btn, .bg-light, .border-bottom, .border-top {
+  background-color: #1e1e2f !important;
+  color: #e6e6e6 !important;
+  border-color: #2d2d3d !important;
+}
+
+.navbar, .navbar-brand, .nav-link, .btn-link {
+  background-color: #23233a !important;
+  color: #e6e6e6 !important;
+}
+
+.btn-primary {
+  background-color: #007acc !important;
+  border-color: #007acc !important;
+}
+
+.card {
+  background: #23233a !important;
+}
+
+pre.bg-light, .bg-light {
+  background: #23233a !important;
+  color: #e6e6e6 !important;
+}
+
+input, textarea, .form-control {
+  background: #23233a !important;
+  color: #e6e6e6 !important;
+  border: 1.5px solid #2d2d3d !important;
+}
+
+.tab-bar {
+  background: #23233a;
+  border-bottom: 1.5px solid #2d2d3d;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 38px;
+  border-radius: 0 !important;
+}
+
+/* Editor & Panels */
+.tab-content, .CodeEditor, .SuggestionsPanel, .ChatbotPanel, .TerminalPanel {
+  background: #1e1e2f !important;
+  color: #e6e6e6 !important;
+}
+
+/* Panel Shadows */
+.panel-shadow {
+  box-shadow: 0 1px 4px #0002;
+}
+
+/* File Explorer, Editor, Chatbot, Suggestions get dark bg and shadow */
+.FileExplorer {
+  background: #23233a !important;
+  color: #e6e6e6 !important;
+  padding: 8px 0 8px 0;
+  font-size: 15px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1.5px solid #2d2d3d;
+}
+.FileExplorer .explorer-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px 4px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 1px 6px;
+  transition: background 0.13s, box-shadow 0.13s;
+  outline: none;
+}
+.FileExplorer .explorer-item.selected {
+  background: #31314a;
+  color: #7fd;
+  box-shadow: 0 2px 8px #0001;
+}
+.FileExplorer .explorer-item:focus {
+  background: #23233a;
+  box-shadow: 0 0 0 2px #7fd;
+  color: #fff;
+}
+.FileExplorer .explorer-icon {
+  width: 18px;
+  margin-right: 8px;
+  opacity: 0.85;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.CodeExplorer, .ChatbotPanel, .SuggestionsPanel {
+  background: #23233a !important;
+  color: #e6e6e6 !important;
+  box-shadow: 0 1px 4px #0002;
+  border-radius: 8px;
+  border: 1.5px solid #2d2d3d !important;
+}
+
+/* Remove default border radius for tab-bar and terminal */
+.tab-bar, .TerminalPanel {
+  border-radius: 0 !important;
+}
+
+/* Make sure the explorer, editor, chatbot have no white/gray patches */
+.bg-dark, .text-light {
+  background: #23233a !important;
+  color: #e6e6e6 !important;
+}
+
+/* Monaco Editor border */
+.CodeEditor > div {
+  border: 1.5px solid #2d2d3d !important;
+  border-radius: 6px;
+}
+
+/* Breadcrumbs border */
+.breadcrumb {
+  border-bottom: 1.5px solid #2d2d3d;
+  margin-bottom: 8px;
+}
+
+/* VS Code-style menu bar */
+.top-menu-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #222235;
+  height: 38px;
+  border-bottom: 1.5px solid #2d2d3d;
+  padding: 0 20px;
+  z-index: 10;
+  box-shadow: 0 2px 8px #0003;
+}
+.top-menu-bar .menu-item {
+  display: flex;
+  align-items: center;
+  margin-right: 26px;
+  font-size: 15px;
+  color: #d4d4d4;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  height: 100%;
+  padding: 0 8px;
+  border-radius: 4px 4px 0 0;
+  transition: background 0.13s, color 0.13s;
+}
+.top-menu-bar .menu-item.open,
+.top-menu-bar .menu-item:focus,
+.top-menu-bar .menu-item:hover {
+  background: #23233a;
+  color: #7fd;
+}
+.top-menu-bar .dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #23233a;
+  min-width: 150px;
+  box-shadow: 0 8px 24px #0006;
+  border-radius: 0 0 8px 8px;
+  padding: 6px 0;
+  z-index: 20;
+  border: 1px solid #353b45;
+}
+.top-menu-bar .dropdown-item {
+  padding: 7px 18px;
+  color: #d4d4d4;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  transition: background 0.13s, color 0.13s;
+}
+.top-menu-bar .dropdown-item:focus,
+.top-menu-bar .dropdown-item:hover {
+  background: #2d2d3d;
+  color: #7fd;
+}
+.top-menu-bar .dropdown-separator {
+  border-bottom: 1px solid #353b45;
+  margin: 5px 0;
+}
+
+/* --- Tabs --- */
+.tab {
+  border-right: 1px solid #23233a;
+  transition: background 0.16s;
+  padding: 0 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #aaa;
+  background: #23233a;
+  margin-top: 3px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.tab.active {
+  background: #23272e;
+  color: #fff;
+  border-top: 2px solid #7fd;
+  z-index: 2;
+}
+.tab .close-btn {
+  margin-left: 8px;
+  color: #f77;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 0.7;
+  transition: opacity 0.12s;
+}
+.tab .close-btn:hover {
+  opacity: 1;
+  color: #ffb3b3;
+}
+.tab:hover {
+  background: #23233a;
+  color: #fff;
+}
+.tab:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #7fd;
+  z-index: 3;
+}
+.tab .close-btn:focus {
+  outline: none;
+  color: #ffb3b3;
+  box-shadow: 0 0 0 2px #f77;
+}
+
+/* --- Status Bar --- */
+.StatusBar {
+  background: #181828;
+  color: #bcbcbc;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-top: 1px solid #23233a;
+  padding: 0 18px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 -1px 6px #0002;
+  position: relative;
+  z-index: 100;
+}
+.StatusBar span {
+  margin-right: 8px;
+}

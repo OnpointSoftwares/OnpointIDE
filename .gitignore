@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+env/
+build/
+dist/
+.eggs/
+*.egg-info/
+.env
+.env.*
+
+# FastAPI
+workspace/
+.onpoint_versions/
+settings.json
+
+# Node/React
+node_modules/
+build/
+dist/
+.env
+.env.*
+.cache/
+yarn-error.log
+npm-debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Data
+*.csv
+*.tsv
+*.log
+data/
