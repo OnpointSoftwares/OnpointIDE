@@ -10,7 +10,7 @@ A modern, AI-powered web-based code editor built with React and Monaco Editor, f
 
 ## 🖥️ Screenshot
 
-![Gemini Code Editor Interface](../screenshots/ide.png)
+![Gemini Code Editor Interface](screenshots/ide.png)
 
 
 ## ✨ Features
