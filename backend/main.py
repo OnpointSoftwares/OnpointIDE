@@ -480,24 +480,55 @@ async def suggest_code(request: Request):
     data = await request.json()
     code_context = data.get("code", "")
     language = data.get("language", "python")
-    prompt = f"Suggest the next lines of {language} code given the following context:\n{code_context}\n" 
+    
+    # Create the prompt for code suggestion
+    prompt = f"Suggest the next lines of {language} code given the following context:\n{code_context}\n"
+    
+    # Set up the API request
     headers = {"Content-Type": "application/json"}
     params = {"key": GEMINI_API_KEY}
     payload = {
-        "contents": [
-            {"parts": [{"text": prompt}]}
-        ]
+        "contents": [{"parts": [{"text": prompt}]}]
     }
-    async with httpx.AsyncClient() as client:
-        response = await client.post(GEMINI_API_URL, headers=headers, params=params, json=payload)
-        response.raise_for_status()
-        result = response.json()
-    print("[GEMINI RAW RESPONSE]", result)
+    
+    # Make the API request
     try:
-        suggestion = result["candidates"][0]["content"]["parts"][0]["text"]
-    except Exception:
-        suggestion = ""
-    return {"suggestion": suggestion}
+        async with httpx.AsyncClient() as client:
+            response = await client.post(GEMINI_API_URL, headers=headers, params=params, json=payload)
+            response.raise_for_status()
+            result = response.json()
+
+        # Check if the result contains candidates
+        candidates = result.get("candidates", [])
+
+        if not candidates:
+            return {"error": "No suggestions returned from the API, please check the input context."}
+
+        # If candidates exist, process them and select the most relevant one
+        suggestion = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+
+        # Check if no suggestion is returned
+        if not suggestion:
+            return {"error": "No code suggestion returned from the first candidate."}
+
+        # Return a concise and summarized response
+        return {
+            "suggestion": suggestion.strip(),
+            "status": "success",
+            "language": language,
+            "context_length": len(code_context),
+            "message": "Code suggestion successfully generated."
+        }
+
+    except httpx.RequestError as e:
+        # Handle request errors
+        return {
+            "error": f"Request failed: {str(e)}",
+            "status_code": e.response.status_code if e.response else "N/A"
+        }
+    except Exception as e:
+        # Handle unexpected errors
+        return {"error": f"An error occurred: {str(e)}"}
 
 @app.post("/api/analyze")
 async def analyze_code(request: Request):

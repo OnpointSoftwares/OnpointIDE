@@ -250,15 +250,16 @@ function App() {
     setLoading(false);
   };
 
-  const handleAccept = (diff) => {
+  const handleAcceptSuggestion = (suggestion) => {
+    const newContent = activeTabObj.content + '\n' + suggestion.message;
     setCodeTabs((prevTabs) => prevTabs.map(tab =>
-      tab.path === activeTab ? { ...tab, content: tab.content + '\n' + diff.code } : tab
+      tab.path === activeTab ? { ...tab, content: newContent } : tab
     ));
-    setSuggestions((prev) => prev.filter((s) => s.id !== diff.id));
+    setSuggestions((prev) => prev.filter((s) => s.message !== suggestion.message));
   };
 
-  const handleReject = (diff) => {
-    setSuggestions((prev) => prev.filter((s) => s.id !== diff.id));
+  const handleRejectSuggestion = (suggestion) => {
+    setSuggestions((prev) => prev.filter((s) => s.message !== suggestion.message));
   };
 
   const handleFileClick = async (fullPath, fileHandle) => {
@@ -709,6 +710,14 @@ function App() {
                 {lines.map((line, i) => <li key={i}>{line}</li>)}
               </ul>
             )}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+              <button onClick={() => handleAcceptSuggestion(items[0])} style={{ padding: 6, background: '#7fd', color: '#222', border: 'none', borderRadius: 4 }}>
+                Accept
+              </button>
+              <button onClick={() => handleRejectSuggestion(items[0])} style={{ padding: 6, background: '#f7c873', color: '#222', border: 'none', borderRadius: 4 }}>
+                Reject
+              </button>
+            </div>
           </div>
         ) : (
           <span>No suggestions.</span>
@@ -761,7 +770,11 @@ function App() {
             </div>
             {/* AI Suggestions Panel (right) */}
             <div style={{ width: 300, borderLeft: '1.5px solid #2d2d3d', background: '#23233a' }}>
-              <SuggestionsPanel />
+            <SuggestionsPanel 
+    suggestions={suggestions} 
+    onAccept={handleAcceptSuggestion} 
+    onReject={handleRejectSuggestion} 
+/>
             </div>
           </div>
           {/* Terminal Panel (bottom) */}
