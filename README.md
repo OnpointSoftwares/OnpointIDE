@@ -1,54 +1,92 @@
-# OnPoint IDE
+# Gemini Code Editor
 
-A modern, AI-powered Integrated Development Environment (IDE) for smart code editing and productivity. Combines a React-based frontend with a FastAPI backend that provides intelligent code suggestions using Gemini and Deepseek models.
+[![GitHub license](https://img.shields.io/github/license/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/pulls)
+[![GitHub last commit](https://img.shields.io/github/last-commit/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/commits/main)
 
-## Features
-- **File Explorer:** Browse, open, and edit files from any selected project folder
-- **Monaco Editor:** Syntax-highlighted code editing
-- **AI Suggestions:** Real-time code review and improvement suggestions (Gemini/Deepseek)
-- **Notification System:** User feedback for file actions and errors
-- **Dark Theme:** Professional, eye-friendly interface
-- **Terminal & AI Assistant Panels:** Toggleable panels for productivity
-- **Persistent Tabs:** Open multiple files without duplicates
+A modern, AI-powered web-based code editor built with React and Monaco Editor, featuring Gemini AI integration for intelligent code suggestions and reviews.
 
-## Tech Stack
-- **Frontend:** React, Monaco Editor
-- **Backend:** FastAPI, Gemini API, Deepseek Coder, Python 3.9+
+## 🖥️ Screenshot
 
-## Setup
+![Gemini Code Editor Interface](../screenshots/ide.png)
 
-### 1. Backend (FastAPI)
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-# Set your Gemini API key in .env
-uvicorn main:app --reload
+
+## ✨ Features
+
+- **Intelligent Code Editor**
+  - Monaco Editor with syntax highlighting for multiple languages
+  - Advanced code completion and IntelliSense
+  - Real-time error detection and diagnostics
+
+- **AI-Powered Assistance**
+  - Gemini AI integration for code analysis
+  - Smart code suggestions and improvements
+  - Interactive diff viewer for AI-generated changes
+
+- **Modern Development Experience**
+  - Clean, responsive UI built with React and Bootstrap 5
+  - Keyboard shortcuts for improved productivity
+  - Terminal integration with xterm.js
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 16+ and npm 8+
+- React 18+
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/OnpointSoftwares/OnpointIDE.git
+   cd OnpointIDE/frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   The application will be available at `http://localhost:3000`
+
+## 🏗️ Project Structure
+
+```
+src/
+├── App.js              # Main application component
+├── CodeEditor.js       # Monaco Editor integration
+├── SuggestionsPanel.js # AI suggestions interface
+├── api.js             # API service layer
+└── StatusBar.js       # Status bar component
 ```
 
-### 2. Frontend (React)
-```bash
-cd frontend
-npm install
-npm start
-```
+## 🤝 Contributing
 
-- The frontend runs on [http://localhost:3000](http://localhost:3000)
-- The backend runs on [http://localhost:8000](http://localhost:8000)
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
 
-## Usage
-- Select a project folder from the File menu to browse files.
-- Click a file to open and edit it.
-- AI suggestions are shown on file open and save, in the right panel.
-- Save files to trigger new AI suggestions.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Environment Variables
-- `.env` in `backend/` should include your `GEMINI_API_KEY`.
+## 📄 License
 
-## Contributing
-Pull requests welcome! Please open issues for feature requests or bugs.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## License
-MIT
+## 📬 Contact
 
+For feature requests and bug reports, please open an issue on [GitHub](https://github.com/OnpointSoftwares/OnpointIDE/issues).
+
+## 📊 Repository Stats
+
+![GitHub repo size](https://img.shields.io/github/repo-size/OnpointSoftwares/OnpointIDE?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/OnpointSoftwares/OnpointIDE?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/OnpointSoftwares/OnpointIDE?style=flat-square)
+![GitHub contributors](https://img.shields.io/github/contributors/OnpointSoftwares/OnpointIDE?style=flat-square)
