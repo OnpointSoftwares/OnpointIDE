@@ -4,6 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/pulls)
+[![GitHub commits](https://img.shields.io/github/commit-activity/t/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/OnpointSoftwares/OnpointIDE?style=flat-square)](https://github.com/OnpointSoftwares/OnpointIDE/commits/main)
 
 A modern, AI-powered web-based code editor built with React and Monaco Editor, featuring Gemini AI integration for intelligent code suggestions and reviews.
