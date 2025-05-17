@@ -8,6 +8,11 @@
 
 A modern, AI-powered web-based code editor built with React and Monaco Editor, featuring Gemini AI integration for intelligent code suggestions and reviews.
 
+## 🖥️ Screenshot
+
+![Gemini Code Editor Interface](../screenshots/ide.png)
+
+
 ## ✨ Features
 
 - **Intelligent Code Editor**
